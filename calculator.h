@@ -404,7 +404,6 @@ namespace Voroninaproject {
 			this->button14->TabIndex = 29;
 			this->button14->Text = L"button14";
 			this->button14->UseVisualStyleBackColor = true;
-			this->button14->Click += gcnew System::EventHandler(this, &calculator::button14_Click);
 			// 
 			// button15
 			// 
@@ -459,15 +458,16 @@ namespace Voroninaproject {
 #pragma endregion
 	private:double N1;
 	private:double N2;
+	private: double res;
 	private:char operation_sign;
-	private:bool click_checker = false, equal_pressed=false;
+	private:bool click_checker = false, equal_pressed = false, last_click_checker=false;
 	private:double memory;
 	private: double do_operation()
 	{
 		switch (operation_sign)
 		{
 		case '+':
-			return N1+N2;
+			return N1 + N2;
 		case '-':
 			return N1 - N2;
 		case '*':
@@ -478,96 +478,195 @@ namespace Voroninaproject {
 			return N1 / N2;
 		}
 		return 0;
-		
+
 	}
-			   
+
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		textBox1->Text = textBox1->Text + "1";
-	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "2";
-	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "3";
-	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "4";
-	}
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "5";
-	}
-	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "6";
-	}
-	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "7";
-	}
-	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "8";
-	}
-	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "9";
-	}
-	private: System::Void button0_Click(System::Object^ sender, System::EventArgs^ e) 
-	{
-		textBox1->Text = textBox1->Text + "0";
-	}
-	
-	
-	private:void get_operation(String^ operation)
-	{
-		equal_pressed = false;
-		operation_sign = operation[0];
-		if (click_checker)
+		if (textBox1->Text == "0")
 		{
-			textBox2->Text = textBox1->Text + " " + operation;
+			textBox1->Text = "1";
 		}
 		else
 		{
-			N1 = Double::Parse(textBox1->Text);
-			textBox2->Text = textBox1->Text + " " + operation;
+			textBox1->Text = textBox1->Text + "1";
+		}
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "2";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "2";
+		}
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "3";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "3";
+		}
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "4";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "4";
+		}
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "5";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "5";
+		}
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "6";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "6";
+		}
+	}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "7";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "7";
+		}
+	}
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "8";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "8";
+		}
+	}
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "9";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "9";
+		}
+	}
+	private: System::Void button0_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (textBox1->Text == "0")
+		{
+			textBox1->Text = "0";
+		}
+		else
+		{
+			textBox1->Text = textBox1->Text + "0";
+		}
+	}
+
+
+	private:void get_operation()
+	{
+		equal_pressed = false;
+		double N_tempor = Double::Parse(textBox1->Text);
+		if (last_click_checker)
+		{
+			textBox2->Text = textBox1->Text + " " + (Char)operation_sign;
+		}
+		else if(click_checker && N_tempor!=N1)
+		{
+			N2 = N_tempor;
+			textBox2->Text = Convert::ToString(res) + " " + (Char)operation_sign;
+			textBox1->Text = Convert::ToString(res);
+		}
+		else
+		{
+			N1 = N_tempor;
+			textBox2->Text = textBox1->Text + " " + (Char)operation_sign;
 			textBox1->Text = "";
 			click_checker = true;
 		}
+		last_click_checker = true;
 	}
 	private: System::Void button_plus_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		get_operation("+");
+		operation_sign = '+';
+		get_operation();
 	}
-	private: System::Void button_minus_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_minus_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		get_operation("-");
+		operation_sign = '-';
+		get_operation();
 	}
-	private: System::Void button_multip_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_multip_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		get_operation("*");
+		operation_sign = '*';
+		get_operation();
 	}
-	private: System::Void button_divide_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_divide_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		get_operation("/");
+		operation_sign = '/';
+		get_operation();
 	}
-	
-	private: System::Void button_equal_Click(System::Object^ sender, System::EventArgs^ e) 
+
+	private: System::Void button_equal_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (!click_checker) return;
-		textBox2->Text = textBox2->Text + " " + textBox1->Text + " =";
-		textBox1->Text = Convert::ToString(do_operation());
+		if (!click_checker && !equal_pressed) return;
+		if (equal_pressed)
+		{
+			N1 = Double::Parse(textBox1->Text);
+			textBox2->Text = textBox2->Text + textBox2->Text->Remove(0, textBox2->Text->IndexOf(' '));
+		}
+		else
+		{
+			textBox2->Text = textBox2->Text + " " + textBox1->Text + " " + "=";
+			N2 = Double::Parse(textBox1->Text);
+		}
+		res = do_operation();
+		if (res == Double::NaN)
+		{
+			textBox1->Text = "Error";
+			return;
+		}
+		else
+		{
+			textBox1->Text = Convert::ToString(res);
+		}
 		click_checker = false;
 		equal_pressed = true;
 	}
 
 
-	private: System::Void button_C_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_C_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		textBox1->Text = "0";
 	}
@@ -576,42 +675,42 @@ namespace Voroninaproject {
 		if (!textBox1->Text->Contains(button_coma->Text))
 			textBox1->Text = textBox1->Text + Convert::ToString(button_coma->Text);
 	}
-	private: System::Void button_CE_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_CE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		textBox1->Text = "0";
 		textBox2->Text = "";
 	}
 
-	private: System::Void button_changer_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_changer_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		if (textBox1->Text != "0")
 		{
-			double num= Double::Parse(textBox1->Text);
+			double num = Double::Parse(textBox1->Text);
 			num = -num;
 			textBox1->Text = Convert::ToString(num);
 		}
 	}
 
-	private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		if (textBox1->Text->Length > 0)
 		{
 			textBox1->Text = textBox1->Text->Remove(textBox1->Text->Length - 1);
 		}
 	}
-	private: System::Void button_power_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_power_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		textBox2->Text = "sqr(" + textBox1->Text + ")";
 		double num = Double::Parse(textBox1->Text);
-		num = Math::Pow(num,2);
+		num = Math::Pow(num, 2);
 		textBox1->Text = Convert::ToString(num);
 	}
-	private: System::Void button_sqrt_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void button_sqrt_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		textBox2->Text = "sqrt(" + textBox1->Text + ")";
 		double num = Double::Parse(textBox1->Text);
 		num = Math::Sqrt(num);
 		textBox1->Text = Convert::ToString(num);
 	}
-
+	};
 }
