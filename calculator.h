@@ -233,79 +233,96 @@ namespace Voroninaproject {
 			// 
 			// button_power
 			// 
+			this->button_power->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button_power->Location = System::Drawing::Point(272, 371);
 			this->button_power->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_power->Name = L"button_power";
 			this->button_power->Size = System::Drawing::Size(70, 68);
 			this->button_power->TabIndex = 10;
 			this->button_power->Text = L"x^2";
-			this->button_power->UseVisualStyleBackColor = true;
+			this->button_power->UseVisualStyleBackColor = false;
 			this->button_power->Click += gcnew System::EventHandler(this, &calculator::button_power_Click);
 			// 
 			// button_sqrt
 			// 
+			this->button_sqrt->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button_sqrt->Location = System::Drawing::Point(351, 371);
 			this->button_sqrt->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_sqrt->Name = L"button_sqrt";
 			this->button_sqrt->Size = System::Drawing::Size(70, 68);
 			this->button_sqrt->TabIndex = 11;
 			this->button_sqrt->Text = L"sqrt(x)";
-			this->button_sqrt->UseVisualStyleBackColor = true;
+			this->button_sqrt->UseVisualStyleBackColor = false;
 			this->button_sqrt->Click += gcnew System::EventHandler(this, &calculator::button_sqrt_Click);
 			// 
 			// button_divide
 			// 
+			this->button_divide->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_divide->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_divide->Location = System::Drawing::Point(430, 371);
 			this->button_divide->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_divide->Name = L"button_divide";
 			this->button_divide->Size = System::Drawing::Size(70, 68);
 			this->button_divide->TabIndex = 12;
 			this->button_divide->Text = L":";
-			this->button_divide->UseVisualStyleBackColor = true;
+			this->button_divide->UseVisualStyleBackColor = false;
 			this->button_divide->Click += gcnew System::EventHandler(this, &calculator::button_divide_Click);
 			// 
 			// button_multip
 			// 
+			this->button_multip->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_multip->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_multip->Location = System::Drawing::Point(430, 448);
 			this->button_multip->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_multip->Name = L"button_multip";
 			this->button_multip->Size = System::Drawing::Size(70, 68);
 			this->button_multip->TabIndex = 13;
 			this->button_multip->Text = L"*";
-			this->button_multip->UseVisualStyleBackColor = true;
+			this->button_multip->UseVisualStyleBackColor = false;
 			this->button_multip->Click += gcnew System::EventHandler(this, &calculator::button_multip_Click);
 			// 
 			// button_minus
 			// 
+			this->button_minus->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_minus->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_minus->Location = System::Drawing::Point(430, 525);
 			this->button_minus->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_minus->Name = L"button_minus";
 			this->button_minus->Size = System::Drawing::Size(70, 68);
 			this->button_minus->TabIndex = 14;
 			this->button_minus->Text = L"-";
-			this->button_minus->UseVisualStyleBackColor = true;
+			this->button_minus->UseVisualStyleBackColor = false;
 			this->button_minus->Click += gcnew System::EventHandler(this, &calculator::button_minus_Click);
 			// 
 			// button_plus
 			// 
+			this->button_plus->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_plus->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_plus->Location = System::Drawing::Point(430, 602);
 			this->button_plus->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_plus->Name = L"button_plus";
 			this->button_plus->Size = System::Drawing::Size(70, 68);
 			this->button_plus->TabIndex = 15;
 			this->button_plus->Text = L"+";
-			this->button_plus->UseVisualStyleBackColor = true;
+			this->button_plus->UseVisualStyleBackColor = false;
 			this->button_plus->Click += gcnew System::EventHandler(this, &calculator::button_plus_Click);
 			// 
 			// button_changer
 			// 
+			this->button_changer->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_changer->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_changer->Location = System::Drawing::Point(192, 678);
 			this->button_changer->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_changer->Name = L"button_changer";
 			this->button_changer->Size = System::Drawing::Size(70, 68);
 			this->button_changer->TabIndex = 16;
 			this->button_changer->Text = L"+/-";
-			this->button_changer->UseVisualStyleBackColor = true;
+			this->button_changer->UseVisualStyleBackColor = false;
 			this->button_changer->Click += gcnew System::EventHandler(this, &calculator::button_changer_Click);
 			// 
 			// button0
@@ -321,57 +338,68 @@ namespace Voroninaproject {
 			// 
 			// button_coma
 			// 
+			this->button_coma->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_coma->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_coma->Location = System::Drawing::Point(351, 678);
 			this->button_coma->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_coma->Name = L"button_coma";
 			this->button_coma->Size = System::Drawing::Size(70, 68);
 			this->button_coma->TabIndex = 18;
 			this->button_coma->Text = L",";
-			this->button_coma->UseVisualStyleBackColor = true;
+			this->button_coma->UseVisualStyleBackColor = false;
 			this->button_coma->Click += gcnew System::EventHandler(this, &calculator::button_coma_Click);
 			// 
 			// button_equal
 			// 
+			this->button_equal->BackColor = System::Drawing::SystemColors::ButtonShadow;
+			this->button_equal->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_equal->Location = System::Drawing::Point(430, 678);
 			this->button_equal->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_equal->Name = L"button_equal";
 			this->button_equal->Size = System::Drawing::Size(70, 68);
 			this->button_equal->TabIndex = 19;
 			this->button_equal->Text = L"=";
-			this->button_equal->UseVisualStyleBackColor = true;
+			this->button_equal->UseVisualStyleBackColor = false;
 			this->button_equal->Click += gcnew System::EventHandler(this, &calculator::button_equal_Click);
 			// 
 			// button_CE
 			// 
+			this->button_CE->BackColor = System::Drawing::SystemColors::HotTrack;
 			this->button_CE->Location = System::Drawing::Point(272, 294);
 			this->button_CE->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_CE->Name = L"button_CE";
 			this->button_CE->Size = System::Drawing::Size(70, 68);
 			this->button_CE->TabIndex = 21;
 			this->button_CE->Text = L"CE";
-			this->button_CE->UseVisualStyleBackColor = true;
+			this->button_CE->UseVisualStyleBackColor = false;
 			this->button_CE->Click += gcnew System::EventHandler(this, &calculator::button_CE_Click);
 			// 
 			// button_C
 			// 
+			this->button_C->BackColor = System::Drawing::SystemColors::HotTrack;
 			this->button_C->Location = System::Drawing::Point(351, 294);
 			this->button_C->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_C->Name = L"button_C";
 			this->button_C->Size = System::Drawing::Size(70, 68);
 			this->button_C->TabIndex = 22;
 			this->button_C->Text = L"C";
-			this->button_C->UseVisualStyleBackColor = true;
+			this->button_C->UseVisualStyleBackColor = false;
 			this->button_C->Click += gcnew System::EventHandler(this, &calculator::button_C_Click);
 			// 
 			// button_erase
 			// 
+			this->button_erase->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->button_erase->Font = (gcnew System::Drawing::Font(L"MingLiU_HKSCS-ExtB", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button_erase->Location = System::Drawing::Point(430, 294);
 			this->button_erase->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_erase->Name = L"button_erase";
 			this->button_erase->Size = System::Drawing::Size(70, 68);
 			this->button_erase->TabIndex = 23;
 			this->button_erase->Text = L"⌫";
-			this->button_erase->UseVisualStyleBackColor = true;
+			this->button_erase->UseVisualStyleBackColor = false;
 			this->button_erase->Click += gcnew System::EventHandler(this, &calculator::button_erase_Click);
 			// 
 			// textBox1
@@ -392,35 +420,41 @@ namespace Voroninaproject {
 			// 
 			// button_MC
 			// 
+			this->button_MC->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->button_MC->Location = System::Drawing::Point(528, 294);
 			this->button_MC->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_MC->Name = L"button_MC";
 			this->button_MC->Size = System::Drawing::Size(69, 66);
 			this->button_MC->TabIndex = 26;
 			this->button_MC->Text = L"MC";
-			this->button_MC->UseVisualStyleBackColor = true;
+			this->button_MC->UseVisualStyleBackColor = false;
 			this->button_MC->Click += gcnew System::EventHandler(this, &calculator::button_MC_Click);
 			// 
 			// button_MR
 			// 
+			this->button_MR->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->button_MR->Location = System::Drawing::Point(608, 294);
 			this->button_MR->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_MR->Name = L"button_MR";
 			this->button_MR->Size = System::Drawing::Size(69, 66);
 			this->button_MR->TabIndex = 27;
 			this->button_MR->Text = L"MR";
-			this->button_MR->UseVisualStyleBackColor = true;
+			this->button_MR->UseVisualStyleBackColor = false;
 			this->button_MR->Click += gcnew System::EventHandler(this, &calculator::button_MR_Click);
 			// 
 			// button_MS
 			// 
+			this->button_MS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->button_MS->Location = System::Drawing::Point(686, 295);
 			this->button_MS->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button_MS->Name = L"button_MS";
 			this->button_MS->Size = System::Drawing::Size(69, 66);
 			this->button_MS->TabIndex = 28;
 			this->button_MS->Text = L"MS";
-			this->button_MS->UseVisualStyleBackColor = true;
+			this->button_MS->UseVisualStyleBackColor = false;
 			this->button_MS->Click += gcnew System::EventHandler(this, &calculator::button_MS_Click);
 			// 
 			// button_Mplus
@@ -507,6 +541,7 @@ namespace Voroninaproject {
 	private:bool last_was_operation = false;
 	private:bool last_was_equal = false;
 	private:char prev_operation;
+	private:bool error_checker = false;
 	private: double do_operation()
 	{
 		switch (operation_sign)
@@ -718,7 +753,18 @@ namespace Voroninaproject {
 		operation_sign = '/';
 		get_operation();
 	}
-
+	private: void toggle_switch(bool toggle)
+	{
+		button_plus->Enabled = toggle;
+		button_minus->Enabled = toggle;
+		button_coma->Enabled = toggle;
+		button_multip->Enabled = toggle;
+		button_divide->Enabled = toggle;
+		button_changer->Enabled = toggle;
+		button_power->Enabled = toggle;
+		button_sqrt->Enabled = toggle;
+		button_equal->Enabled = toggle;
+	}
 	private: System::Void button_equal_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		
@@ -736,6 +782,8 @@ namespace Voroninaproject {
 		if (res == Double::NaN)
 		{
 			textBox1->Text = "Error";
+			error_checker = true;
+			toggle_switch(false);
 			return;
 		}
 		else
@@ -786,7 +834,7 @@ namespace Voroninaproject {
 	{
 		textBox2->Text = "sqr(" + textBox1->Text + ")";
 		N1 = Double::Parse(textBox1->Text);
-		N1 = Math::Pow(N1, 2);
+		res = Math::Pow(N1, 2);
 		textBox1->Text = Convert::ToString(res);
 	}
 	private: System::Void button_sqrt_Click(System::Object^ sender, System::EventArgs^ e)
@@ -796,6 +844,9 @@ namespace Voroninaproject {
 		if(N1<0)
 		{
 			textBox1->Text = "Error";
+			error_checker = true;
+			toggle_switch(false);
+			return;
 		}
 		else
 		{
@@ -821,23 +872,23 @@ namespace Voroninaproject {
 	{
 		memory = Double::Parse(textBox1->Text);
 		memory0->Text = Convert::ToString(memory);
-		button_MR->Enabled = false;
-		button_MC->Enabled = false;
+		button_MR->Enabled = true;
+		button_MC->Enabled = true;
 	}
 	private: System::Void button_Mplus_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		memory += Double::Parse(textBox1->Text);
 		memory0->Text = Convert::ToString(memory);
-		button_MR->Enabled = false;
-		button_MC->Enabled = false;
+		button_MR->Enabled = true;
+		button_MC->Enabled = true;
 	}
 		   
 	private: System::Void button_Mminus_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		memory -= Double::Parse(textBox1->Text);
 		memory0->Text = Convert::ToString(memory);
-		button_MR->Enabled = false;
-		button_MC->Enabled = false;
+		button_MR->Enabled = true;
+		button_MC->Enabled = true;
 	}
 };
 }
